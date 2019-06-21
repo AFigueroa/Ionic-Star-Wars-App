@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Star Wars Heroes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <!-- Header Row -->
+        <ion-row>
+            <ion-col class="bold">Name</ion-col>
+            <ion-col class="bold">Films</ion-col>
+            <ion-col class="bold">Vehicles</ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let hero of heroList.results">
+          <ion-col>{{hero.name}}</ion-col>
+          <ion-col>{{hero.films.length}}</ion-col>
+          <ion-col>{{hero.vehicles.length}}</ion-col>
+          <ion-col>
+              <ion-button (click)="goToDetails(hero.url)">
+                  <ion-icon name="arrow-forward"></ion-icon>
+              </ion-button>
+          </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+
+      <span class="ion-padding bold">Page: {{currentPage}} of {{maxPages}}</span>
+
+      <ion-button [disabled]="currentPage === 1" color="light" (click)="getPreviousPage(currentPage)">
+          <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+
+      <ion-button [disabled]="currentPage === maxPages" color="light" (click)="getNextPage(currentPage)">
+          <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+      
+</ion-content>

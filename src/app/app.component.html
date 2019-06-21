@@ -2,22 +2,18 @@
   <ion-menu side="start" menuId="main" content-id="content">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>Star Wars App</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
         <ion-item href="/home">Home</ion-item>
+        <ion-item href="/heroes">Heroes</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
 
-  <ion-header>
-    <ion-toolbar>
-      <ion-menu-button slot="start" (click)="openMainMenu()"></ion-menu-button>
-      <ion-title>Star Wars App</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <ion-router-outlet id="content"></ion-router-outlet>
 </ion-app>

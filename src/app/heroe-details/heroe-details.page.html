@@ -1,2 +1,21 @@
-<ion-content>
+<ion-header>
+<ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-back-button slot="start" defaultHref="/heroes"></ion-back-button>
+    <ion-title>Hero Details</ion-title>
+</ion-toolbar>
+</ion-header>
+      
+<ion-content class="ion-padding">
+        <ion-card *ngIf="hero"> 
+            <ion-card-header>
+              <ion-card-title>{{hero.name}}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+                <p>
+    {{hero.name}} is a {{hero.gender}}. This hero's hair is color {{hero.hair_color}}. This hero's skin is color {{hero.skin_color}}. This hero's height is {{hero.height}}.
+                </p>
+            </ion-card-content>
+        </ion-card>
 </ion-content>

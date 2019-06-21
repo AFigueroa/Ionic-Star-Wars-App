@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SwapiService } from '../swapi/swapi.service';
+import { Component } from '@angular/core';
 
 import {Hero} from '../swapi/models/hero';
 @Component({
@@ -7,24 +6,11 @@ import {Hero} from '../swapi/models/hero';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage {
   public heroes: Array<Hero> = [];
 
-  constructor(private service: SwapiService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.getHeroes();
-  }
-
-  getHeroes() {
-    this.service.getHeroes().subscribe(
-      heroes => {
-        this.heroes = heroes;
-      },
-      err => {
-        // Show Toast
-      }
-    );
-  }
+  
   
 }
